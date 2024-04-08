@@ -1,0 +1,133 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Game</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            
+        }
+        .cards{
+            height: 200px;
+            width: 250px;
+            border: 10px solid black;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+        h2{
+text-align: center;
+        }
+        .btn4{
+            cursor: pointer;
+            margin: 10px;
+            width: 100px;
+            margin-left: 80px;
+        }
+        .btn{
+            display:inline;
+           width:150px;
+            min-height: 20px;
+            margin: 0px 10px;
+            cursor: pointer;
+            
+           
+        }
+        .btn1{
+            display: flex;
+            justify-items: center;
+            align-items: center;
+          
+        }
+    
+            span{
+             border: 1px solid black; 
+             padding: 5px;
+             width: 30px;
+             color: aliceblue;
+             background-color: black;
+
+
+        } 
+        .resetbtn{
+            width: 150px;
+            margin: 10px 50px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="cards">
+        <h2>Counter App</h2>
+        <div class="btn1">
+        <button class="btn" id="in" onclick="adding()">Increment by 1</button>
+     
+        <span id="displayv">0</span>
+        <button class="btn" id="s" onclick="des()">decrement by 1</button>
+    </div>
+       
+        <button id="re" onclick="reset1()" class="btn4">Reset button</button>
+
+    </div>
+    <script>
+
+       let add=document.getElementById("in")
+       console.log(add.innerText);
+       let sub=document.getElementById("s")
+       console.log(sub.innerText);
+       let span=document.getElementById("displayv")
+       console.log(span);
+       let reset=document.getElementById("re")
+       console.log(reset);
+       function adding()
+       {
+           let num=Number(span.innerText)
+
+        span.innerText=num+1;
+        // console.log(span.innerText);
+
+       }
+       function des()
+       {
+        let num=Number(span.innerText)
+        if(num>0){
+        span.innerText=num-1;
+        }
+        else{
+            alert("negative numbers are not allowed")
+        }
+       }
+       function reset1()
+       {
+        span.innerText=0;
+       }
+       document.addEventListener("click",color)
+   
+        function randomcolor()
+        {
+let val='0123456789ABCDEF';
+let rn='#'
+for(let i=0;i<6;i++)
+{
+    rn=rn+val[Math.floor(Math.random()*16)]
+
+}
+return rn;
+        }
+        function color()
+        {
+            document.body.style.backgroundColor=randomcolor();
+           
+        }
+     
+
+    </script>
+</body>
+</html>
